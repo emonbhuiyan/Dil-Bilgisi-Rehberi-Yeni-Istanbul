@@ -1,5 +1,8 @@
 # Istanbul B1 Turkish Textbook Vocabulary List
 
+This vocabulary list is organized by unit and category, matching the structure of the B1 İstanbul Turkish for Foreigners textbook.
+
+---
 ## Unit 1
 
 
