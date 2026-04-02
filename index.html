@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dil Bilgisi Study Hub</title>
+  <meta name="description" content="Interactive Turkish study companion for the Yeni İstanbul course." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge">TR</div>
+        <div>
+          <h1>Dil Bilgisi Study Hub</h1>
+          <p>Yeni İstanbul companion</p>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <label class="label" for="globalSearch">Search</label>
+        <input id="globalSearch" class="input" type="search" placeholder="Search topic, rule, or word..." />
+      </div>
+
+      <div class="sidebar-card">
+        <div class="section-title-row">
+          <h2>Levels</h2>
+          <button id="clearLevelBtn" class="ghost-btn" type="button">Clear</button>
+        </div>
+        <div id="levelFilters" class="chip-wrap"></div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="section-title-row">
+          <h2>Content</h2>
+          <button id="clearTypeBtn" class="ghost-btn" type="button">Clear</button>
+        </div>
+        <div id="typeFilters" class="chip-wrap"></div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="section-title-row">
+          <h2>Quick links</h2>
+        </div>
+        <nav id="docNav" class="doc-nav"></nav>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="hero">
+        <div>
+          <span class="eyebrow">Study smarter, not messier</span>
+          <h2>Your Turkish course companion</h2>
+          <p>
+            This site reads the repository markdown files directly, turns them into clean lessons,
+            and automatically shows new levels when you add files like <code>A1_Grammar.md</code> or <code>C1_Vocabulary.md</code>.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button id="studyModeBtn" class="primary-btn" type="button">Study mode</button>
+          <button id="themeBtn" class="secondary-btn" type="button">Toggle theme</button>
+        </div>
+      </header>
+
+      <section class="stats-grid" id="statsGrid">
+        <article class="stat-card">
+          <span class="stat-label">Levels</span>
+          <strong id="levelCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Documents</span>
+          <strong id="docCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Units</span>
+          <strong id="unitCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Study progress</span>
+          <strong id="progressCount">0%</strong>
+        </article>
+      </section>
+
+      <section id="statusBox" class="status-box">Loading repository content...</section>
+
+      <section class="controls-row">
+        <div class="toggle-group">
+          <button id="expandAllBtn" class="secondary-btn" type="button">Expand all</button>
+          <button id="collapseAllBtn" class="secondary-btn" type="button">Collapse all</button>
+        </div>
+        <div class="toggle-group">
+          <label class="toggle-inline">
+            <input id="onlyUnfinished" type="checkbox" />
+            <span>Show only unfinished</span>
+          </label>
+        </div>
+      </section>
+
+      <section id="docsContainer" class="docs-grid"></section>
+    </main>
+  </div>
+
+  <template id="docCardTemplate">
+    <article class="doc-card">
+      <div class="doc-card-top">
+        <div>
+          <div class="pill-row">
+            <span class="pill level-pill"></span>
+            <span class="pill type-pill"></span>
+          </div>
+          <h3 class="doc-title"></h3>
+          <p class="doc-subtitle"></p>
+        </div>
+        <button class="favorite-btn" type="button" aria-label="Toggle favorite">☆</button>
+      </div>
+      <div class="unit-list"></div>
+    </article>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
