@@ -1,6 +1,6 @@
 # Istanbul B2 Turkish Textbook Vocabulary List
 
-## Unit 1
+## Unit 1: Leyleği Havada Görmek
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
@@ -65,7 +65,7 @@
 
 ---
 
-## Unit 2
+## Unit 2: Geçmişten Günümüze
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
@@ -131,7 +131,7 @@
 
 ---
 
-## Unit 3
+## Unit 3: Değişen Dünya
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
@@ -198,7 +198,7 @@
 
 ---
 
-## Unit 4
+## Unit 4: Dünyadan Haberler
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
@@ -253,7 +253,7 @@
 
 ---
 
-## Unit 5
+## Unit 5: Harikalar Dünyası
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
@@ -311,7 +311,7 @@
 
 ---
 
-## Unit 6
+## Unit 6: Bilinmeyene Yolculuk
 
 | Turkish | English | Bangla | Arabic |
 |---|---|---|---|
