@@ -1,14 +1,6 @@
-// const REPO_CONFIG = {
-//   owner: "emonbhuiyan",
-//   repo: "Dil-Bilgisi-Rehberi-Yeni-Istanbul",
-//   branch: "main",
-//   acceptedLevels: ["A1", "A2", "B1", "B2", "C1", "C2"],
-//   acceptedTypes: ["Grammar", "Vocabulary"],
-// };
-
 const REPO_CONFIG = {
   owner: "emonbhuiyan",
-  repo: "Dil-Bilgisi-Rehberi-Yeni-Istanbul",
+  repo: "Dil-Bilgisi-Rehberi",
   branch: "main",
   contentPath: "src",
   acceptedLevels: ["A1", "A2", "B1", "B2", "C1", "C2"],
@@ -49,11 +41,41 @@ const els = {
   docCount: document.getElementById("docCount"),
   unitCount: document.getElementById("unitCount"),
   progressCount: document.getElementById("progressCount"),
+  resultsInfo: document.getElementById("resultsInfo"),
   docCardTemplate: document.getElementById("docCardTemplate"),
 };
 
+function updateThemeButton() {
+  const icon = els.themeBtn.querySelector("i");
+  const label = els.themeBtn.querySelector(".btn-label");
+
+  if (state.ui.theme === "dark") {
+    icon.className = "fa-solid fa-sun";
+    label.textContent = "Light mode";
+  } else {
+    icon.className = "fa-solid fa-moon";
+    label.textContent = "Dark mode";
+  }
+}
+
+function updateStudyModeButton() {
+  const icon = els.studyModeBtn.querySelector("i");
+  const label = els.studyModeBtn.querySelector(".btn-label");
+
+  if (state.ui.studyMode) {
+    icon.className = "fa-solid fa-book-open-reader";
+    label.textContent = "Study mode on";
+  } else {
+    icon.className = "fa-solid fa-graduation-cap";
+    label.textContent = "Study mode";
+  }
+}
+
 function setTheme() {
   document.body.classList.toggle("dark", state.ui.theme === "dark");
+  document.body.classList.toggle("study-mode", state.ui.studyMode);
+  updateThemeButton();
+  updateStudyModeButton();
 }
 
 function saveUi() {
@@ -124,6 +146,7 @@ function extractUnits(markdown, fallbackTitle) {
     const end = index + 1 < matches.length ? matches[index + 1].index : normalized.length;
     const block = normalized.slice(start, end).trim();
     const title = block.split("\n")[0].replace(/^#{1,2}\s+/, "").trim();
+
     return {
       title,
       id: slugify(title),
@@ -134,15 +157,6 @@ function extractUnits(markdown, fallbackTitle) {
 
   return units;
 }
-
-// async function fetchRepoContents() {
-//   const apiUrl = `https://api.github.com/repos/${REPO_CONFIG.owner}/${REPO_CONFIG.repo}/contents/?ref=${REPO_CONFIG.branch}`;
-//   const response = await fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } });
-//   if (!response.ok) {
-//     throw new Error(`GitHub API returned ${response.status}`);
-//   }
-//   return response.json();
-// }
 
 async function fetchRepoContents() {
   const apiUrl = `https://api.github.com/repos/${REPO_CONFIG.owner}/${REPO_CONFIG.repo}/contents/${REPO_CONFIG.contentPath}?ref=${REPO_CONFIG.branch}`;
@@ -161,7 +175,11 @@ async function fetchRepoContents() {
 function filenameToMeta(name) {
   const match = name.match(/^(A1|A2|B1|B2|C1|C2)_(Grammar|Vocabulary)\.md$/i);
   if (!match) return null;
-  return { level: match[1].toUpperCase(), type: capitalize(match[2]) };
+
+  return {
+    level: match[1].toUpperCase(),
+    type: capitalize(match[2]),
+  };
 }
 
 function capitalize(value) {
@@ -179,16 +197,31 @@ function getUnitKey(doc, unit) {
 function getCompletionPercent() {
   const totalUnits = state.docs.reduce((sum, doc) => sum + doc.units.length, 0);
   if (!totalUnits) return 0;
+
   const done = state.docs.reduce((sum, doc) => {
     return sum + doc.units.filter((unit) => state.progress[getUnitKey(doc, unit)]).length;
   }, 0);
+
   return Math.round((done / totalUnits) * 100);
+}
+
+function getDocProgress(doc) {
+  const total = doc.units.length;
+  if (!total) return 0;
+
+  const done = doc.units.filter((unit) => state.progress[getUnitKey(doc, unit)]).length;
+  return Math.round((done / total) * 100);
+}
+
+function findNextUnfinishedUnit(doc) {
+  return doc.units.find((unit) => !state.progress[getUnitKey(doc, unit)]) || doc.units[0] || null;
 }
 
 async function loadDocs() {
   els.statusBox.textContent = "Loading repository content...";
 
   const contents = await fetchRepoContents();
+
   const files = contents
     .filter((item) => item.type === "file")
     .filter((item) => filenameToMeta(item.name));
@@ -285,21 +318,30 @@ function isFavorite(doc) {
 
 function toggleFavorite(doc) {
   const key = getDocKey(doc);
+
   if (isFavorite(doc)) {
     state.favorites = state.favorites.filter((item) => item !== key);
   } else {
     state.favorites.push(key);
   }
+
   saveFavorites();
   renderDocs();
 }
 
 function matchDoc(doc) {
   const query = state.filters.query.trim().toLowerCase();
+
   if (state.filters.level && doc.level !== state.filters.level) return false;
   if (state.filters.type && doc.type !== state.filters.type) return false;
 
-  const haystack = [doc.title, doc.type, doc.level, doc.name, ...doc.units.map((unit) => `${unit.title} ${unit.raw}`)]
+  const haystack = [
+    doc.title,
+    doc.type,
+    doc.level,
+    doc.name,
+    ...doc.units.map((unit) => `${unit.title} ${unit.raw}`)
+  ]
     .join(" ")
     .toLowerCase();
 
@@ -313,11 +355,31 @@ function matchDoc(doc) {
   return true;
 }
 
+function jumpToUnit(doc, unit) {
+  const docId = `doc-${slugify(getDocKey(doc))}`;
+  const article = document.getElementById(docId);
+  if (!article) return;
+
+  const allCards = [...article.querySelectorAll(".unit-card")];
+  const targetIndex = doc.units.findIndex((item) => item.id === unit.id);
+  const targetCard = allCards[targetIndex];
+
+  if (!targetCard) {
+    article.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+
+  targetCard.open = true;
+  targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 function renderDocs() {
   const docs = state.docs.filter(matchDoc);
   els.docsContainer.innerHTML = "";
+  els.resultsInfo.textContent = `${docs.length} document${docs.length === 1 ? "" : "s"} found`;
 
   if (!docs.length) {
+    els.resultsInfo.textContent = "0 documents found";
     els.docsContainer.innerHTML = `<div class="empty-state">No content matched your current filters.</div>`;
     return;
   }
@@ -326,12 +388,18 @@ function renderDocs() {
 
   sortedDocs.forEach((doc) => {
     const fragment = els.docCardTemplate.content.cloneNode(true);
+
     const article = fragment.querySelector(".doc-card");
     const title = fragment.querySelector(".doc-title");
     const subtitle = fragment.querySelector(".doc-subtitle");
     const levelPill = fragment.querySelector(".level-pill");
     const typePill = fragment.querySelector(".type-pill");
     const favoriteBtn = fragment.querySelector(".favorite-btn");
+    const favoriteIcon = fragment.querySelector(".favorite-btn i");
+    const progressFill = fragment.querySelector(".doc-progress-fill");
+    const progressText = fragment.querySelector(".doc-progress-text");
+    const continueBtn = fragment.querySelector(".continue-btn");
+    const sourceLink = fragment.querySelector(".source-link");
     const unitList = fragment.querySelector(".unit-list");
 
     article.id = `doc-${slugify(getDocKey(doc))}`;
@@ -339,13 +407,30 @@ function renderDocs() {
     subtitle.innerHTML = highlightText(doc.intro, state.filters.query);
     levelPill.textContent = doc.level;
     typePill.textContent = doc.type;
-    favoriteBtn.textContent = isFavorite(doc) ? "★" : "☆";
+
+    const favorited = isFavorite(doc);
+    favoriteBtn.classList.toggle("active", favorited);
+    favoriteIcon.className = favorited ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark";
     favoriteBtn.addEventListener("click", () => toggleFavorite(doc));
+
+    const docProgress = getDocProgress(doc);
+    progressFill.style.width = `${docProgress}%`;
+    progressText.textContent = `${docProgress}% completed`;
+
+    sourceLink.href = doc.sourceUrl;
+
+    const nextUnit = findNextUnfinishedUnit(doc);
+    continueBtn.addEventListener("click", () => {
+      if (nextUnit) jumpToUnit(doc, nextUnit);
+    });
 
     doc.units.forEach((unit, index) => {
       const details = document.createElement("details");
       details.className = "unit-card";
-      if (state.ui.studyMode && index === 0) details.open = true;
+
+      if (state.ui.studyMode) {
+        details.open = index === 0 && !state.filters.query;
+      }
 
       const summary = document.createElement("summary");
       summary.className = "unit-summary";
@@ -358,12 +443,16 @@ function renderDocs() {
 
       const studyLabel = document.createElement("label");
       studyLabel.className = "toggle-inline";
-      studyLabel.innerHTML = `<input class="study-checkbox" type="checkbox" ${state.progress[getUnitKey(doc, unit)] ? "checked" : ""}><span>Studied</span>`;
+      studyLabel.innerHTML = `
+        <input class="study-checkbox" type="checkbox" ${state.progress[getUnitKey(doc, unit)] ? "checked" : ""}>
+        <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Studied</span>
+      `;
+
       studyLabel.querySelector("input").addEventListener("change", (event) => {
         state.progress[getUnitKey(doc, unit)] = event.target.checked;
         saveProgress();
         renderStats();
-        if (state.filters.unfinishedOnly) renderDocs();
+        renderDocs();
       });
 
       actions.appendChild(studyLabel);
@@ -415,7 +504,7 @@ function bindEvents() {
 
   els.studyModeBtn.addEventListener("click", () => {
     state.ui.studyMode = !state.ui.studyMode;
-    els.studyModeBtn.textContent = state.ui.studyMode ? "Study mode on" : "Study mode";
+    setTheme();
     saveUi();
     renderDocs();
   });
@@ -431,7 +520,6 @@ function bindEvents() {
 
 async function init() {
   setTheme();
-  els.studyModeBtn.textContent = state.ui.studyMode ? "Study mode on" : "Study mode";
   bindEvents();
 
   try {

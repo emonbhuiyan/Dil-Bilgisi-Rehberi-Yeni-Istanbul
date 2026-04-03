@@ -16,13 +16,18 @@
   <link rel="manifest" href="assets/site.webmanifest">
   <link rel="shortcut icon" href="assets/favicon.ico">
 
-  <!-- Google tag (gtag.js) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8DFMNJG1P"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-E8DFMNJG1P');
   </script>
 </head>
@@ -30,37 +35,46 @@
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-badge">TR</div>
-        <div>
+        <div class="brand-badge">
+          <img src="assets/logo.png" alt="Dil Bilgisi Rehberi logo" class="brand-logo">
+        </div>
+        <div class="brand-text">
           <h1>Dil Bilgisi Rehberi</h1>
           <p>Yeni İstanbul companion</p>
         </div>
       </div>
 
-      <div class="sidebar-card">
-        <label class="label" for="globalSearch">Search</label>
+      <div class="sidebar-card search-card">
+        <label class="label" for="globalSearch">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <span>Search</span>
+        </label>
         <input id="globalSearch" class="input" type="search" placeholder="Search topic, rule, or word..." />
       </div>
 
       <div class="sidebar-card">
         <div class="section-title-row">
-          <h2>Levels</h2>
-          <button id="clearLevelBtn" class="ghost-btn" type="button">Clear</button>
+          <h2><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Levels</h2>
+          <button id="clearLevelBtn" class="icon-btn" type="button" aria-label="Clear level filter" title="Clear level filter">
+            <i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i>
+          </button>
         </div>
         <div id="levelFilters" class="chip-wrap"></div>
       </div>
 
       <div class="sidebar-card">
         <div class="section-title-row">
-          <h2>Content</h2>
-          <button id="clearTypeBtn" class="ghost-btn" type="button">Clear</button>
+          <h2><i class="fa-solid fa-book-open" aria-hidden="true"></i> Content</h2>
+          <button id="clearTypeBtn" class="icon-btn" type="button" aria-label="Clear content filter" title="Clear content filter">
+            <i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i>
+          </button>
         </div>
         <div id="typeFilters" class="chip-wrap"></div>
       </div>
 
       <div class="sidebar-card">
         <div class="section-title-row">
-          <h2>Quick links</h2>
+          <h2><i class="fa-solid fa-link" aria-hidden="true"></i> Quick links</h2>
         </div>
         <nav id="docNav" class="doc-nav"></nav>
       </div>
@@ -68,34 +82,48 @@
 
     <main class="main-content">
       <header class="hero">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow">Study smarter, not messier</span>
           <h2>Your Turkish course companion</h2>
           <p>
-            Dil Bilgisi Rehberi is an interactive Turkish study website built to support learners using the Yeni İstanbul course books. It organizes grammar notes and vocabulary for A1, A2, B1, and B2 levels into a clean, easy-to-study format with search, filters, progress tracking, favorites, and dark mode.
+            Study Turkish grammar and vocabulary by level, unit, and topic. Built as a simple learning companion for the Yeni İstanbul course books.
           </p>
+
+          <div class="hero-feature-list">
+            <span><i class="fa-solid fa-book-open" aria-hidden="true"></i> Grammar + Vocabulary</span>
+            <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Progress tracking</span>
+            <span><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Study mode</span>
+            <span><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Dark mode</span>
+          </div>
         </div>
+
         <div class="hero-actions">
-          <button id="studyModeBtn" class="primary-btn" type="button">Study mode</button>
-          <button id="themeBtn" class="secondary-btn" type="button">Toggle theme</button>
+          <button id="studyModeBtn" class="primary-btn icon-text-btn" type="button">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="btn-label">Study mode</span>
+          </button>
+          <button id="themeBtn" class="secondary-btn icon-text-btn" type="button">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            <span class="btn-label">Dark mode</span>
+          </button>
         </div>
       </header>
 
       <section class="stats-grid" id="statsGrid">
         <article class="stat-card">
-          <span class="stat-label">Levels</span>
+          <span class="stat-label"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Levels</span>
           <strong id="levelCount">0</strong>
         </article>
         <article class="stat-card">
-          <span class="stat-label">Documents</span>
+          <span class="stat-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Documents</span>
           <strong id="docCount">0</strong>
         </article>
         <article class="stat-card">
-          <span class="stat-label">Units</span>
+          <span class="stat-label"><i class="fa-solid fa-list-ul" aria-hidden="true"></i> Sections</span>
           <strong id="unitCount">0</strong>
         </article>
         <article class="stat-card">
-          <span class="stat-label">Study progress</span>
+          <span class="stat-label"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Study progress</span>
           <strong id="progressCount">0%</strong>
         </article>
       </section>
@@ -104,34 +132,80 @@
 
       <section class="controls-row">
         <div class="toggle-group">
-          <button id="expandAllBtn" class="secondary-btn" type="button">Expand all</button>
-          <button id="collapseAllBtn" class="secondary-btn" type="button">Collapse all</button>
+          <button id="expandAllBtn" class="secondary-btn icon-text-btn" type="button">
+            <i class="fa-solid fa-angles-down" aria-hidden="true"></i>
+            <span>Expand all</span>
+          </button>
+          <button id="collapseAllBtn" class="secondary-btn icon-text-btn" type="button">
+            <i class="fa-solid fa-angles-up" aria-hidden="true"></i>
+            <span>Collapse all</span>
+          </button>
         </div>
         <div class="toggle-group">
           <label class="toggle-inline">
             <input id="onlyUnfinished" type="checkbox" />
-            <span>Show only unfinished</span>
+            <span><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Show only unfinished</span>
           </label>
         </div>
       </section>
 
+      <section id="resultsInfo" class="results-info"></section>
+
       <section id="docsContainer" class="docs-grid"></section>
+
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          <p>
+            <strong>Disclaimer:</strong> This website is an independent study helper created for personal learning and classroom support alongside the Yeni İstanbul course books.
+            It is not an official publication and is not intended to replace, reproduce, re-sell, or republish the original books.
+          </p>
+          <p>
+            All course-book rights, titles, and related intellectual property belong to their respective owners.
+            This project is shared only to help with study, revision, and topic organization for myself and classmates.
+          </p>
+          <p>
+            If any copyright owner believes any content here should be changed or removed, I am willing to review and remove it promptly.
+          </p>
+        </div>
+      </footer>
     </main>
   </div>
 
   <template id="docCardTemplate">
     <article class="doc-card">
       <div class="doc-card-top">
-        <div>
+        <div class="doc-card-main">
           <div class="pill-row">
             <span class="pill level-pill"></span>
             <span class="pill type-pill"></span>
           </div>
           <h3 class="doc-title"></h3>
           <p class="doc-subtitle"></p>
+
+          <div class="doc-progress">
+            <div class="doc-progress-bar">
+              <span class="doc-progress-fill"></span>
+            </div>
+            <small class="doc-progress-text"></small>
+          </div>
         </div>
-        <button class="favorite-btn" type="button" aria-label="Toggle favorite">☆</button>
+
+        <button class="favorite-btn" type="button" aria-label="Toggle favorite" title="Toggle favorite">
+          <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+        </button>
       </div>
+
+      <div class="doc-meta-row">
+        <button class="ghost-btn continue-btn icon-text-btn" type="button">
+          <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+          <span>Continue study</span>
+        </button>
+        <a class="source-link" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>View source</span>
+        </a>
+      </div>
+
       <div class="unit-list"></div>
     </article>
   </template>
