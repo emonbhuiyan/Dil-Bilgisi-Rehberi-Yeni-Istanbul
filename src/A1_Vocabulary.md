@@ -1,8 +1,6 @@
 # Istanbul A1 Turkish Textbook Vocabulary List
 
-This file is extracted from the six A1 vocabulary pages and organized unit by unit in the same general table style as the A2 sample.
-
-Units included: Merhaba, Nerede?, Ne Yapıyorsun?, Benim Dünyam, Zaman Zaman, Çevremiz ve Biz.
+This vocabulary list is organized by unit and category, matching the structure of the A1 İstanbul Turkish for Foreigners textbook.
 
 ---
 

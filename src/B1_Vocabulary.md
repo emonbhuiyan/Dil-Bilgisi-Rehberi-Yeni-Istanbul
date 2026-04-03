@@ -53,6 +53,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | uyum          | harmony, adaptation | সামঞ্জস্য              | توافق                   |
 | vana          | valve             | ভালভ                   | صمام                    |
 | vergi         | tax               | কর                     | ضريبة                   |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller**   | **Verbs**         | **ক্রিয়া**              | **أفعال**               |
 | akıtmak       | to flow, to drain | প্রবাহিত করা           | يصب                     |
 | atıştırmak    | to snack          | হালকা খাবার খাওয়া       | تناول وجبة خفيفة         |
@@ -162,6 +165,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | zafer             | victory             | বিজয়                    | انتصار                |
 | zahmetli          | arduous/demanding   | শ্রমসাধ্য               | شاق                   |
 | zorluk            | difficulty          | কষ্ট                     | صعوبة                 |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller (Verbs)** |                     |                         |                      |
 | aksamak           | to falter/lag       | পিছিয়ে পড়া             | يتعثر                 |
 | aşmak             | to exceed/overcome  | অতিক্রম করা             | يتجاوز                |
@@ -193,6 +199,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | yenilemek         | to renew            | পুনর্নবীকরণ করা        | يجدد                  |
 | yetinmek          | to be content/satisfied | সন্তুষ্ট হওয়া        | يكتفي                 |
 | yönetmek          | to manage/lead      | পরিচালনা করা            | يدير                  |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Kalıp İfadeler (Phrases)** |             |                         |                      |
 | sıfırdan başlamak | to start from zero  | শূন্য থেকে শুরু করা      | يبدأ من الصفر         |
 | sıfırdan var etmek| to create from scratch | সম্পূর্ণ নতুন করে তৈরি করা | يخلق من العدم          |
@@ -283,6 +292,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | yara            | wound             | ক্ষত                   | جرح                     |
 | yaşam           | life              | জীবন                 | حياة                    |
 | yoga            | yoga              | যোগ                   | يوغا                    |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller (Verbs)** |                   |                      |                       |
 | acımak          | to hurt / to ache | ব্যথা করা            | يؤلم                    |
 | akmak           | to flow           | প্রবাহিত হওয়া       | يَجْرِي                 |
@@ -307,6 +319,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | uzaklaşmak      | to move away      | দূরে সরে যাওয়া       | يبتعد                   |
 | yaralanmak      | to get injured    | আহত হওয়া           | يصاب                    |
 | yayılmak        | to spread         | ছড়িয়ে পড়া          | ينتشر                   |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Kalıp İfadeler (Phrases)** |           |                      |                       |
 | hastalık hastası| hypochondriac     | রোগ ভীতি             | مريض بالوهم             |
 | katkı maddesi   | additive          | সংযোজক পদার্থ        | مادة مضافة              |
@@ -430,6 +445,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | yüksek lisans    | master's degree            | স্নাতকোত্তর ডিগ্রী        | ماجستير                   |
 | zekâ             | intelligence               | বুদ্ধিমত্তা               | ذكاء                      |
 | zihin            | mind                      | মন                        | عقل                       |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller**     | **Verbs**                  | **ক্রিয়াপদ**              | **الأفعال**                |
 | af çıkmak        | to pardon / forgive         | ক্ষমা করা                  | العفو                     |
 | aksatmak         | to delay / disrupt          | বিলম্বিত করা              | يعطل                      |
@@ -454,6 +472,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | yorumlamak    | to interpret / comment        | ব্যাখ্যা করা              | يفسر                     |
 | zannetmek     | to suppose / think            | মনে করা                  | يظن                      |
 | zorlanmak     | to struggle / have difficulty | কষ্ট করা / সমস্যা হওয়া    | يعاني من صعوبة            |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Kalıp İfadeler** | **Set Phrases**           | **স্থায়ী বাক্যাংশ**       | **العبارات الثابتة**      |
 | boşluğa düşmek | to fall into a gap / go blank | ফাঁকে পড়া                 | الوقوع في فراغ           |
 | dil dökmek    | to plead / talk earnestly     | জোর করে বলা              | يُلحّ                     |
@@ -503,6 +524,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | ürün                | product                   | পণ্য                      | منتج                      |
 | yazlık              | summer house              | গ্রীষ্মকালীন ঘর           | بيت صيفي                  |
 | yorum               | comment                   | মন্তব্য                    | تعليق                     |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller (Verbs)** |                            |                             |                           |
 | araştırma yapmak    | to research               | গবেষণা করা                 | بحث                        |
 | çağırmak            | to call                   | ডাকা                      | نادى                       |
@@ -518,6 +542,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | şişmanlamak        | to gain weight            | ওজন বাড়ানো               | ازداد وزناً               |
 | talep etmek        | to demand                 | দাবি করা                  | طالب                       |
 | yardımcı olmak     | to help                   | সাহায্য করা               | ساعد                       |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Kalıp İfadeler (Idioms)** |                    |                             |                           |
 | çocuk kalmak       | to stay childish          | শিশু থাকা                  | يبقى طفلاً                |
 | dünya turuna çıkmak| to go on a world tour     | বিশ্ব সফরে যাওয়া         | القيام بجولة حول العالم   |
@@ -578,6 +605,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | yörük                     | nomadic Turk               | যোরুক (প্রবেশকারী তুর্কি)  | يورك (بدوي تركي)           |
 | yün                       | wool                       | উল                         | صوف                        |
 | zafer işareti             | victory sign               | বিজয়ের চিহ্ন              | إشارة النصر                |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Fiiller**               | **Verbs**                   | **ক্রিয়া**                  | **الأفعال**                |
 | dolmak                    | to fill                    | পূর্ণ হওয়া                  | يملأ                       |
 | göç etmek                 | to migrate                 | অভিবাসন করা                 | الهجرة                    |
@@ -588,6 +618,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | sürdürmek                 | to maintain / sustain      | বজায় রাখা                   | يستمر                     |
 | tazminat ödemek           | to pay compensation        | ক্ষতিপূরণ পরিশোধ করা        | دفع تعويضات               |
 | temas etmek               | to make contact            | সংস্পর্শ করা                | يتصل                      |
+
+| Turkish       | English           | Bangla                | Arabic                |
+|---------------|-------------------|-----------------------|-----------------------|
 | **Kalıp İfadeler**        | **Set Phrases**             | **প্রচলিত উক্তি**           | **تعبيرات ثابتة**          |
 | bir araya getirmek         | to bring together          | একত্রিত করা                  | يجمع                      |
 | bir çuval inciri berbat etmek | to spoil success (idiom: to mess up badly) | সফলতা নষ্ট করা (প্রবাদ) | يفسد النجاح (مثل شعبي)    |

@@ -1,7 +1,6 @@
 # Turkish B2 Grammar Guide (Dil Bilgisi Rehberi)
 
-This file is organized **unit by unit** and contains the **grammar sections only** from the **Yeni İstanbul B2** book.  
-I also added **short English notes** beside the grammar terms so the structure is easier to understand.
+This guide extracts all the essential grammar points from the **B2 İstanbul Turkish for Foreigners** textbook. Each section includes the Turkish and English names, rules, notes, and examples to make your learning journey easier.
 
 ---
 

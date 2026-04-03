@@ -1,5 +1,8 @@
 # Istanbul B2 Turkish Textbook Vocabulary List
 
+This vocabulary list is organized by unit and category, matching the structure of the B2 İstanbul Turkish for Foreigners textbook.
+
+---
 ## Unit 1: Leyleği Havada Görmek
 
 | Turkish | English | Bangla | Arabic |

@@ -1,12 +1,6 @@
-# A1 Yeni İstanbul – Dil Bilgisi Rehberi
+# Turkish A1 Grammar Guide (Dil Bilgisi Rehberi)
 
-This guide follows the same structure as the B1 grammar file. Each grammar topic includes:
-
-* Turkish title
-* English explanation
-* Tables
-* Examples
-* Notes and exceptions directly under the rule they belong to
+This guide extracts all the essential grammar points from the **A1 İstanbul Turkish for Foreigners** textbook. Each section includes the Turkish and English names, rules, notes, and examples to make your learning journey easier.
 
 ---
 
@@ -544,4 +538,5 @@ The second noun must always take a possessive suffix.
 * Bu ev daha büyük.
 * İstanbul Türkiye'nin en büyük şehri.
 ---
+
 *This summary is designed to be clear and concise for your study notes. Good luck with your Turkish studies!*

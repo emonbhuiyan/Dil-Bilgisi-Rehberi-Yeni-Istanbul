@@ -385,4 +385,5 @@ This double-verb structure emphasizes the starting point even more.
     *   Türkiye'ye **geldim geleli** suşi yemedim. (Ever since I came to Turkey, I haven't eaten sushi.)
     *   Okul **bitti biteli** hiç ders çalışmıyorum. (Ever since school finished, I haven't studied at all.)
 ---
+
 *This summary is designed to be clear and concise for your study notes. Good luck with your Turkish studies!*

@@ -48,6 +48,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | Kumpir | Baked potato | বেকড আলু | كومبير (بطاطا مشوية) |
 | Lahmacun | Turkish pizza | তুর্কি পিৎজা | لحم بعجين |
 | Lazım | Necessary | প্রয়োজনীয় | لازم / ضروري |
+
+| Turkish | English | Bangla | Arabic |
+| :--- | :--- | :--- | :--- |
 | **Fiiller** | **Verbs** | **ক্রিয়া** | **أفعال** |
 | Ara vermek | To take a break | বিরতি নেওয়া | أخذ استراحة |
 | Batmak | To sink / To go bankrupt | ডুবে যাওয়া / দেউলিয়া হওয়া | غرق / غرب |
@@ -104,6 +107,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | Yalan | Lie | মিথ্যা | كذب |
 | Yaygın | Common / Widespread | সাধারণ / ব্যাপক | شائع |
 | Yoğun | Intense / Busy | তীব্র / ব্যস্ত | مكثف / مزدحم |
+
+| Turkish | English | Bangla | Arabic |
+| :--- | :--- | :--- | :--- |
 | **Fiiller** | **Verbs** | **ক্রিয়া** | **أفعال** |
 | Dikiş dikmek | To sew | সেলাই করা | خياطة |
 | Dikkat etmek | To pay attention | মনোযোগ দেওয়া | انتباه |
@@ -265,6 +271,9 @@ This vocabulary list is organized by unit and category, matching the structure o
 | Yıldırım | Lightning | বজ্রপাত | برق |
 | Yöresel | Local / Regional | স্থানীয় | محلي |
 | Ziyaret | Visit | পরিদর্শন | زيارة |
+
+| Turkish | English | Bangla | Arabic |
+| :--- | :--- | :--- | :--- |
 | **Fiiller** | **Verbs** | **ক্রিয়া** | **أفعال** |
 | Biriktirmek | To collect / To save | সঞ্চয় করা | جمع / ادخار |
 | Çarpmak | To hit / To crash | আঘাত করা | ضرب / اصطدام |
