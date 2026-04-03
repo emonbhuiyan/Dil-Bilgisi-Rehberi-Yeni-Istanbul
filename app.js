@@ -1,7 +1,16 @@
+// const REPO_CONFIG = {
+//   owner: "emonbhuiyan",
+//   repo: "Dil-Bilgisi-Rehberi-Yeni-Istanbul",
+//   branch: "main",
+//   acceptedLevels: ["A1", "A2", "B1", "B2", "C1", "C2"],
+//   acceptedTypes: ["Grammar", "Vocabulary"],
+// };
+
 const REPO_CONFIG = {
   owner: "emonbhuiyan",
   repo: "Dil-Bilgisi-Rehberi-Yeni-Istanbul",
   branch: "main",
+  contentPath: "src",
   acceptedLevels: ["A1", "A2", "B1", "B2", "C1", "C2"],
   acceptedTypes: ["Grammar", "Vocabulary"],
 };
@@ -126,12 +135,26 @@ function extractUnits(markdown, fallbackTitle) {
   return units;
 }
 
+// async function fetchRepoContents() {
+//   const apiUrl = `https://api.github.com/repos/${REPO_CONFIG.owner}/${REPO_CONFIG.repo}/contents/?ref=${REPO_CONFIG.branch}`;
+//   const response = await fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } });
+//   if (!response.ok) {
+//     throw new Error(`GitHub API returned ${response.status}`);
+//   }
+//   return response.json();
+// }
+
 async function fetchRepoContents() {
-  const apiUrl = `https://api.github.com/repos/${REPO_CONFIG.owner}/${REPO_CONFIG.repo}/contents/?ref=${REPO_CONFIG.branch}`;
-  const response = await fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } });
+  const apiUrl = `https://api.github.com/repos/${REPO_CONFIG.owner}/${REPO_CONFIG.repo}/contents/${REPO_CONFIG.contentPath}?ref=${REPO_CONFIG.branch}`;
+
+  const response = await fetch(apiUrl, {
+    headers: { Accept: "application/vnd.github+json" }
+  });
+
   if (!response.ok) {
     throw new Error(`GitHub API returned ${response.status}`);
   }
+
   return response.json();
 }
 
