@@ -1,25 +1,202 @@
-# Dil Bilgisi Rehberi: Yeni İstanbul
+# Dil Bilgisi Rehberi – Yeni İstanbul Study Helper
 
-A straightforward, structured guide to Turkish grammar and vocabulary. This repository is built around the *Yeni İstanbul* curriculum, offering clear explanations and word lists for learners navigating the A2 and B1 proficiency levels.
+Dil Bilgisi Rehberi is a personal Turkish study helper website built to support learners using the **Yeni İstanbul** course books.
 
-## What's Inside
+It turns structured Markdown notes into a simple, interactive website for studying **grammar** and **vocabulary** by level and unit.  
+The project is designed to help with revision, quick lookup, and organized self-study beside the book.
 
-The material is organized by level and focus so you can find exactly what you need without digging through textbook filler:
+## Purpose
 
-* [**`A2_Grammar.md`**](A2_Grammar.md) – Core grammatical structures, suffix rules, and practical examples for the A2 stage. 
-* [**`A2_Vocabulary.md`**](A2_Vocabulary.md) – Essential word lists, common verbs, and daily phrases you actually need to know.
-* [**`B1_Grammar.md`**](B1_Grammar.md) – Intermediate mechanics. Think complex sentence structures, gerunds, and conjunctions.
-* [**`B1_Vocabulary.md`**](B1_Vocabulary.md) – Expanded vocabulary, idiomatic expressions, and nuanced terms for B1 learners.
+This project was made as a **study companion** for myself and my classmates.
 
-## How to Use This
+It is not meant to replace the original books.  
+It is simply a cleaner and more practical way to review topics, organize notes, and study more comfortably.
 
-You can read the files directly on GitHub or pull the repository to your local machine to keep your own offline study notes. Use the grammar files to lock down the mechanics of the language, and pair them with the vocabulary lists to actually start building sentences.
+## Current Levels
 
-To clone the repo locally:
+At the moment, the website supports:
 
-```bash
-git clone https://github.com/emonbhuiyan/Dil-Bilgisi-Rehberi-Yeni-Istanbul.git
+- A1
+- A2
+- B1
+- B2
+
+The structure is already prepared so future levels can be added easily, including:
+
+- C1
+- C2
+
+## Features
+
+- Reads content directly from Markdown files
+- Automatically detects available levels and content types
+- Supports both **Grammar** and **Vocabulary**
+- Search by topic, rule, or word
+- Filter by level and content type
+- Progress tracking using browser storage
+- Favorite documents
+- Study mode
+- Dark mode
+- Responsive layout for desktop and mobile
+- GitHub Pages friendly
+
+## Project Structure
+
+```text
+.
+├── index.html
+├── styles.css
+├── app.js
+├── src/
+│   ├── A1_Grammar.md
+│   ├── A1_Vocabulary.md
+│   ├── A2_Grammar.md
+│   ├── A2_Vocabulary.md
+│   ├── B1_Grammar.md
+│   ├── B1_Vocabulary.md
+│   ├── B2_Grammar.md
+│   └── B2_Vocabulary.md
+└── assets/
+    ├── logo.png
+    ├── favicon.ico
+    ├── favicon-16x16.png
+    ├── favicon-32x32.png
+    ├── apple-touch-icon.png
+    ├── android-chrome-192x192.png
+    ├── android-chrome-512x512.png
+    └── site.webmanifest
 ```
 
-## Contributing
-Language learning works best when it's collaborative. If you spot a typo, have a clearer way to explain a grammar rule, or want to add useful everyday phrases to the vocabulary lists, open an issue or submit a pull request.
+## How It Works
+
+The website loads Markdown files from the `src/` folder using the GitHub API.
+
+It looks for files with this naming format:
+
+```text
+LEVEL_Type.md
+```
+
+Examples:
+
+```text
+A1_Grammar.md
+A1_Vocabulary.md
+A2_Grammar.md
+A2_Vocabulary.md
+B1_Grammar.md
+B1_Vocabulary.md
+B2_Grammar.md
+B2_Vocabulary.md
+```
+
+Supported levels:
+
+- A1
+- A2
+- B1
+- B2
+- C1
+- C2
+
+Supported content types:
+
+- Grammar
+- Vocabulary
+
+As long as new files follow the same naming pattern, they will be picked up automatically by the website.
+
+## Adding New Content
+
+To add a new level later, just place new Markdown files inside the `src/` folder.
+
+Examples:
+
+```text
+src/C1_Grammar.md
+src/C1_Vocabulary.md
+src/C2_Grammar.md
+src/C2_Vocabulary.md
+```
+
+No manual update is needed in the HTML structure.
+
+## Running the Project
+
+This is a static website, so it can be opened directly in a browser or hosted with GitHub Pages.
+
+### Local use
+
+You can simply open `index.html` in your browser.
+
+For best results, you can also run a local server.
+
+### GitHub Pages
+
+1. Push the repository to GitHub
+2. Go to **Settings**
+3. Open **Pages**
+4. Select the correct branch
+5. Save
+
+After publishing, the site will load the Markdown files from the repository.
+
+## Configuration
+
+In `app.js`, update the repository settings if needed:
+
+```js
+const REPO_CONFIG = {
+  owner: "emonbhuiyan",
+  repo: "Dil-Bilgisi-Rehberi",
+  branch: "main",
+  contentPath: "src",
+  acceptedLevels: ["A1", "A2", "B1", "B2", "C1", "C2"],
+  acceptedTypes: ["Grammar", "Vocabulary"],
+};
+```
+
+## Tech Used
+
+- HTML
+- CSS
+- JavaScript
+- Marked.js for Markdown rendering
+- Font Awesome CDN for icons
+- GitHub API for loading repository content
+
+## Disclaimer
+
+This website is an independent study helper created for personal learning and classroom support alongside the **Yeni İstanbul** course books.
+
+It is **not an official publication** and is **not intended to replace, reproduce, re-sell, or republish** the original books.
+
+All course-book rights, titles, and related intellectual property belong to their respective owners.
+
+This project is shared only to help with study, revision, and topic organization for personal use and classmates.
+
+If any copyright owner believes any content should be changed or removed, I am willing to review and remove it promptly.
+
+## Notes
+
+This project works best when the content is written as:
+
+- personal notes
+- summaries
+- explanations
+- organized study material
+
+instead of copying large portions from the original book.
+
+## Future Plans
+
+- Add C1
+- Add C2
+- Better study navigation
+- Flashcards or quiz mode
+- Improved progress system
+- More structured content formatting
+
+## Author
+
+Created by **Emon Bhuiyan** as a Turkish study helper project.
