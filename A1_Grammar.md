@@ -10,7 +10,7 @@ This guide follows the same structure as the B1 grammar file. Each grammar topic
 
 ---
 
-# Ünite 1 – Merhaba (Hello)
+# Unit 1: Merhaba (Hello)
 
 ## 1. Türk Alfabesi (Turkish Alphabet)
 
@@ -214,7 +214,7 @@ But in writing and in the book, use the full forms.
 
 ---
 
-# Ünite 2 – Nerede? (Where?)
+# Unit 2: Nerede? (Where?)
 
 ## 1. Bulunma Durumu: -DA / -DE (Locative Case)
 
@@ -257,7 +257,7 @@ If the word ends in `ç, f, h, k, p, s, ş, t` use t.
 
 ---
 
-# Ünite 3 – Ne Yapıyorsun? (What Are You Doing?)
+# Unit 3: Ne Yapıyorsun? (What Are You Doing?)
 
 ## 1. Şimdiki Zaman: -(I)yor (Present Continuous)
 
@@ -369,7 +369,7 @@ If the word ends with a vowel, add y.
 
 ---
 
-# Ünite 4 – Benim Dünyam (My World)
+# Unit 4: Benim Dünyam (My World)
 
 ## 1. İyelik Ekleri (Possessive Suffixes)
 
@@ -440,7 +440,7 @@ But if the object is specific:
 
 ---
 
-# Ünite 5 – Zaman Zaman (Sometimes)
+# Unit 5: Zaman Zaman (Sometimes)
 
 ## 1. Belirli Geçmiş Zaman: -DI (Simple Past)
 
@@ -499,7 +499,7 @@ The last consonant doubles.
 
 ---
 
-# Ünite 6 – Çevremiz ve Biz (Our Environment and Us)
+# Unit 6: Çevremiz ve Biz (Our Environment and Us)
 
 ## 1. İsim Tamlamaları (Noun Compounds)
 
